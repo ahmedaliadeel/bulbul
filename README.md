@@ -11,7 +11,16 @@ Mission
 =======
 The aim of this project is to provide best support for AngularJS both 1.X and 2.X series, React 0.13 (ES6) and Aurelia and some other essential javascript stack libraries (basically to rule the world).
 
-Buil Instructions
+Features
+=================
+* Inline if else statements
+* Lambda expressions
+* ES6 compatible classes
+* Functions
+* Dict as Javascript Object
+* List as Javascript Array
+
+Build Instructions
 =================
 
 Command: bulbul.py [inputpython.py] > [output.js]
