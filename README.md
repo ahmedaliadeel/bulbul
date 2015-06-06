@@ -23,9 +23,7 @@ Examples
 ## AngularJS 1.4
 Bulbul converts this AngularJs 1.4 python code
 ```python
-
 def main_controller():
-    
     todoList = this
     todoList.todos = [
       {'text':'learn angular', 'done':True},
@@ -44,8 +42,7 @@ def main_controller():
     def archive():
         todoList.todos.length = 0
     todoList.archive = archive    
-  
-      
+
 angular.module('todoApp', []).controller('TodoListController', main_controller)
  
 ```
@@ -88,9 +85,7 @@ angular.module("todoApp",[]).controller("TodoListController",main_controller)
 Bulbul converts this React 0.13.X python code
 ```python
 'use strict'
-
 from react import React 
-
 
 class HelloWorld(React.Component):
     def render():
@@ -101,8 +96,6 @@ class HelloWorld(React.Component):
         return bb_jsx('<p>{message}</p>')
 bb_export('default HelloWorld')      
 
-
-    
 start = Date.now()
 setInterval(lambda : React.render(bb_jsx('<HelloWorld elapsed={new Date().getTime() - start} />'), document.getElementById('body') ), 50)
 
