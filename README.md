@@ -21,7 +21,7 @@ Just run this command on example python files.
 Examples
 ========
 
-Convert this AngularJs 1.4 python code
+Bulbul converts this AngularJs 1.4 python code
 ```python
 
 def main_controller():
@@ -48,4 +48,85 @@ def main_controller():
       
 angular.module('todoApp', []).controller('TodoListController', main_controller)
  
+```
+Into this Javscript ES5 Code
+```javascript
+function main_controller()  { 
+   var todoList = this ;
+
+   todoList.todos = [{"text":"learn angular","done":true},{"text":"build an angular app","done":false}] ;
+
+   function addTodo()  { 
+   todoList.todos.push({"text":todoList.todoText,"done":false})
+
+   todoList.todoText = "" ;
+}
+
+   todoList.addTodo = addTodo ;
+
+   function remaining()  { 
+   var count = todoList.todos.reduce(function (p,c)  { 
+  return p+((c.done==true) ? 1:0);
+},0) ;
+
+   return count;
+}
+
+   todoList.remaining = remaining ;
+
+   function archive()  { 
+   todoList.todos.length = 0 ;
+}
+
+   todoList.archive = archive ;
+}
+angular.module("todoApp",[]).controller("TodoListController",main_controller)
+
+```
+
+
+Bulbul converts this React 0.13.X python code
+```python
+'use strict'
+
+from react import React 
+
+
+class HelloWorld(React.Component):
+    def render():
+        elapsed = this.props.elapsed  / 100.0
+        seconds = elapsed / 10.0
+        message ='React has been successfully running for ' + seconds + ' seconds.'
+
+        return bb_jsx('<p>{message}</p>')
+bb_export('default HelloWorld')      
+
+
+    
+start = Date.now()
+setInterval(lambda : React.render(bb_jsx('<HelloWorld elapsed={new Date().getTime() - start} />'), document.getElementById('body') ), 50)
+
+```
+Into this ES6 Code
+```javascript
+"use strict"
+import React from 'react';
+class HelloWorld { 
+render()  { 
+   var elapsed = this.props.elapsed/100.0 ;
+
+   var seconds = elapsed/10.0 ;
+
+   var message = "React has been successfully running for "+seconds+" seconds." ;
+
+   return <p>{message}</p>;
+}
+}
+export default HelloWorld;
+var start = Date.now() ;
+setInterval(function ()  { 
+  return React.render(<HelloWorld elapsed={new Date().getTime() - start} />,document.getElementById("body"));
+},50)
+
+
 ```
