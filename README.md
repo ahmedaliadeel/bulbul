@@ -1,4 +1,4 @@
-# bulbul
+# Bulbul
 Bulbul: A fat-free Python3 to Javascript/ES6 compiler attempt. ![alt tag](https://raw.githubusercontent.com/ahmedaliadeel/bulbul/master/_website/bulbul.png)
 
 Introduction
@@ -20,7 +20,7 @@ Just run this command on example python files.
 
 Examples
 ========
-
+## AngularJS 1.4
 Bulbul converts this AngularJs 1.4 python code
 ```python
 
@@ -84,7 +84,7 @@ angular.module("todoApp",[]).controller("TodoListController",main_controller)
 
 ```
 
-
+## React 0.13.X
 Bulbul converts this React 0.13.X python code
 ```python
 'use strict'
